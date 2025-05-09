@@ -1,0 +1,23 @@
+create stream
+filter
+map
+boxed
+mapToInt mapToFloat ...
+peek
+toList
+sum
+max min
+avg
+distinct
+skip
+Collectors.toCollection
+----------------------------
+flatMap
+Collection.Joining
+limit
+sorted
+reduce
+concat
+count
+groupingBy
+
