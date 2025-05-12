@@ -11,13 +11,13 @@ avg
 distinct
 skip
 Collectors.toCollection
-----------------------------
-flatMap
-Collection.Joining
 limit
-sorted
-reduce
-concat
 count
+concat
+reduce
+flatMap
+sorted
+----------------------------
+Collection.Joining
 groupingBy
 
