@@ -24,28 +24,19 @@ public class App {
         cities.add("Дрезден");
 
         Map<String, Long> collect = cities.stream()
-                .collect(Collectors.groupingBy(c -> getCountryByCity(c), Collectors.counting()));
+                .collect(Collectors.groupingBy(App::getCountryByCity, Collectors.counting()));
 
         System.out.println(collect);
     }
 
     public static String getCountryByCity(String city) {
-        switch (city) {
-            case "Москва":
-            case "Санкт-Петербург":
-            case "Казань":
-                return "РФ";
-            case "Лондон":
-            case "Ливерпуль":
-                return "Великобритания";
-            case "Вашингтон":
-                return "США";
-            case "Берлин":
-            case "Дрезден":
-                return "Германия";
-            case "Париж":
-                return "Франция";
-            default: return "Неизвестно";
-        }
+        return switch (city) {
+            case "Москва", "Санкт-Петербург", "Казань" -> "РФ";
+            case "Лондон", "Ливерпуль" -> "Великобритания";
+            case "Вашингтон" -> "США";
+            case "Берлин", "Дрезден" -> "Германия";
+            case "Париж" -> "Франция";
+            default -> "Неизвестно";
+        };
     }
 }
